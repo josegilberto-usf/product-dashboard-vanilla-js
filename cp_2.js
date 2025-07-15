@@ -23,3 +23,24 @@ async function fetchProductsAsync() {
     }
 }
 
+// Step 5: Define displayProducts() Function
+function displayProducts(products) {
+    const container = document.querySelector('#product-container');
+    const firstFiveProducts = products.slice(0, 5);
+
+    firstFiveProducts.forEach(product => {
+        const{name, price, image} = product.fields;
+
+        const card = document.createElement('div');
+        card.classList.add('product-card');
+
+        card.innerHTML = `
+            <img src='${image[0].url}' alt='${name}' />
+            <div class='product-name'>${name}</div>
+            <div class='product-price'>$${(price/100).toFixed(2)}</div>
+        `;
+
+        container.appendChild(card);
+    });
+}
+
