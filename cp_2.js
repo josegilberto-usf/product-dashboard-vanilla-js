@@ -44,3 +44,8 @@ function displayProducts(products) {
     });
 }
 
+// Step 6: Define handleError() Function
+function handleError(error) {
+    console.error('An error occurred:', error.message);
+}
+
