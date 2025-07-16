@@ -16,8 +16,8 @@ function fetchProductsThen() {
 async function fetchProductsAsync() {
     try {
         const response = await fetch('https://www.course-api.com/javascript-store-products');
-        const data = await response.json();
-        displayProducts(data);
+        const products = await response.json();
+        displayProducts(products);
     } catch (error) {
         handleError(error);
     }
@@ -46,7 +46,7 @@ function displayProducts(products) {
 
 // Step 6: Define handleError() Function
 function handleError(error) {
-    console.error('An error occurred:', error.message);
+    console.error('An error occurred:', error);
 }
 
 // Step 7: Call the Functions
